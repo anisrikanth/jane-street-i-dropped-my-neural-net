@@ -43,15 +43,6 @@ python dropped_net.py
 
 The script loads the shuffled pieces, reconstructs the model ordering, evaluates the reconstruction against the historical data, and prints the recovered permutation.
 
-## Main ideas
-
-The solver relies on some observations:
-
-- The tensor shapes reveal which layers are input projections, output projections, and the final layer.
-- Correctly paired residual block halves have stronger structure in `W_out @ W_in`.
-- The historical predictions provide a scoring function for candidate block orderings.
-- A good initial ordering can be refined with local swaps until the reconstruction matches the original model.
-
 For the detailed explanation, see the full blog post:
 
 **[I dropped a neural net](https://arkved.bearblog.dev/i-dropped-a-neural-net/)**
